@@ -9,50 +9,44 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Splitter;
+import model.Duper;
 
 /**
- * Servlet implementation class getAdditionServlet
+ * Servlet implementation class getSubtractionServlet
  */
-@WebServlet("/getAdditionServlet")
-public class getAdditionServlet extends HttpServlet {
+@WebServlet("/getSubtractionServlet")
+public class getSubtractionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public getAdditionServlet() {
-        
+    public getSubtractionServlet() {
+       
         // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//int Integer.parseInt(request.getParameter("userNumber"));
 		int userNumber1 = Integer.parseInt(request.getParameter("userNumber1"));
 		int userNumber2 = Integer.parseInt(request.getParameter("userNumber2"));
-		int userNumber3 = Integer.parseInt(request.getParameter("userNumber3"));
-		int total = userNumber1 + userNumber2 + userNumber3;
+		int difference = userNumber1 - userNumber2;
 		
-		Splitter split = new Splitter(total);
-		split.setSplits(total);
-		request.setAttribute("userAdditionPouch", split);
-		getServletContext().getRequestDispatcher("/result2.jsp").forward(request, response);
-		
-		//writer.println("Those numbers are equal to" + (userNumber1 + userNumber2 + userNumber3));
+		Duper dupe = new Duper(difference);
+		dupe.setDupes(difference);
+		request.setAttribute("userSubtractionPouch", dupe);
+		getServletContext().getRequestDispatcher("/result.jsp").forward(request, response);
 		PrintWriter writer = response.getWriter();
-
-		writer.println("Those numbers are equal to " + split.getQuarters() + "/4ths, or " + split.getTenths() + " /10ths, or " + split.getHundredths() + "/100ths.");
-
+		writer.println("Those numbers when multiplied by x2, x5 and x100 become: ((a-b)2,(a-b)5, or(a-b)1000)" + dupe.getX2() + ", " + dupe.getX5() + ", and " +  dupe.getX1000());
+		// TODO Auto-generated method stub
 		writer.close();
-		
-	}
+		}
 
 }

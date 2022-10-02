@@ -14,5 +14,11 @@ Enter 3 numbers you would like to add:
 <input type="text" name ="userNumber3" size="10">
 <input type="submit" value="Add Arguments"/>
 </form>
+<form action="getSubtractionServlet" method="post">
+Enter 2 numbers you would like to subtract:
+<input type="text" name ="userNumber1" size="10">
+<input type="text" name ="userNumber2" size="10">
+<input type="submit" value="Add Arguments"/>
+</form>
 </body>
 </html>
