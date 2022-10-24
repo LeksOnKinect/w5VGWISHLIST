@@ -3,7 +3,9 @@
 	<persistence-unit name="VGWishList" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>model.ListItem</class>
-		<properties>
+		<class>model.Wisher</class>
+		<class>model.ListDetails</class>
+				<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/WishList"/>
 			<property name="javax.persistence.jdbc.user" value="root"/>

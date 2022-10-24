@@ -12,5 +12,7 @@ Game: <input type = "text" name = "game">
 <input type = "submit" value="Add item">
 </form> <br/>
 <a href = "viewAllItemsServlet">View the complete list</a>
+<a href="viewAllListsServlet">View all shopping lists</a> <br />
+<a href="addItemsForListServlet">Create a new list</a>
 </body>
 </html>
